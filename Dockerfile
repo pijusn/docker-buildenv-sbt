@@ -35,3 +35,8 @@ RUN set -x \
 	&& rm docker.tgz
 
 WORKDIR /root
+
+# Set up entry point.
+COPY entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["entrypoint.sh"]
+CMD ["sh"]
